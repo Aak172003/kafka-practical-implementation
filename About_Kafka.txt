@@ -1,0 +1,33 @@
+Kafka has High Through put , But Low storage 
+Database has low throughput , but has high storage 
+Also we can't perform query operation in kafka 
+
+
+Kafka is not an alternative of Database 
+
+Kafka solve the through put problem and database solve the storage problem 
+ 
+So producer produce the data and push inside kafka service 
+and those service need data to perform any operation we called as consumer and 
+Consumer access data from kafka , 
+and after processing they can perform bulk insert in database 
+
+--------------------  Architecture of Kafka -----------------------
+
+1 Consumer can consume multiple partitions 
+But 1 partitions is consume by only one consumer 
+Let's say there is there is two partition A and B if consumer 1 access partion A so for sure consumer 2 can be access partioin A , it can access partition B but not A 
+
+And this partition consumer things work in group level 
+
+
+-------------------------- Kafka follow which System -----------------------
+
+RabbitMQ follow Queue architecture ( one partition can only be access by one consumer )
+SQS -> Simple Queue Service follow Queue Architecture ( one partition can only be access by one consumer )
+But SES -> Simple Email Service follow pub-sub model (means one partition can be access by multiple consumer )
+
+************
+But in Kafka 
+we can perform both model (queue and pub-sub ) with the help of consumer group 
+Refer -> kafka-queue-pub-sub.png 
